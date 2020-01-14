@@ -28,7 +28,6 @@ void ofApp::setup()
     ofLog(OF_LOG_NOTICE, ofToString(numCirclesX));
     ofLog(OF_LOG_NOTICE, ofToString(numCirclesY));
     
-    ofLog(OF_LOG_NOTICE, ofToString(((int)roundf(ofRandom(1)) % 2)));
     ofSetLineWidth(1);
     
     int numCirclesTotal = numCirclesX * numCirclesY;
@@ -87,7 +86,10 @@ void DrawSecondLayerCircles()
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    img.grabScreen(0,0,width,height);
+    img.save("render.png");
+    ofLog(OF_LOG_NOTICE, "image saved");
+    
 }
 
 //--------------------------------------------------------------
